@@ -12,7 +12,7 @@ export default function LoginPage({ onLogin }) {
     setLoading(true)
     setError('')
     try {
-      const res = await axios.post('http://localhost:3000/api/auth/login', { username, password })
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/login`, { username, password })
       localStorage.setItem('token', res.data.token)
       localStorage.setItem('username', res.data.username)
       onLogin(res.data)
