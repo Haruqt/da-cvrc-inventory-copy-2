@@ -4,12 +4,12 @@ const db = require('./db/database')
 const { router: authRouter } = require('./routes/auth')
 
 const app = express()
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://da-cvrc-inventory.vercel.app'
+    'https://da-cvrc-inventory-copy-2.vercel.app'
   ]
 }))
 app.use(express.json())
